@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Body from "./components/Body";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { getInitialData } from "./utils";
 
 function App() {
+  const [query, setQuery] = useState("");
+  const [searchNotes, setSearchNotes] = useState([]);
+  const [notes, setNotes] = useState(getInitialData());
+
+  const notesAll = (searchNotes || notes).filter((note) => !note.archived);
+  const notesArchive = (searchNotes || notes).filter((note) => note.archived);
+
+  useEffect(() => {
+    setSearchNotes(
+      notes.filter((note) =>
+        note.title.toLowerCase().includes(query.toLowerCase())
+      )
+    );
+  }, [query, notes]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="note-app">
+      <Header search={query} setQuery={setQuery} />
+      <Body
+        notesAll={notesAll}
+        notesArchive={notesArchive}
+        setNotes={setNotes}
+      />
+      <Footer />
     </div>
   );
 }
