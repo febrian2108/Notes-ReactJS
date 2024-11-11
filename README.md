@@ -1,4 +1,3 @@
-
 # Personal Notes App
 
 Project ini dibuat untuk menyelesaikan Final Project dari Course "Belajar Membuat Aplikasi Web dengan React" DiCoding
