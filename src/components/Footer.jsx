@@ -7,8 +7,6 @@ const Footer = () => {
                 Copyright &#169; 2024,{" "}
                 <a
                     className="link"
-                    target="_blank"
-                    rel="Xxxxxxxx"
                     href="https://github.com/febrian2108"
                 >
                     Febrian2108
