@@ -9,6 +9,11 @@ Project ini dibuat untuk menyelesaikan Final Project dari Course "Belajar Membua
 ![Notes-App](https://imgur.com/yFjiQoI.jpeg)
 
 
+## Live Demo
+
+Live Demo: https://personal-notes-app-rho.vercel.app/
+
+
 ## Tech Stack
 
 **Client:** React, Bootstrap, JQuery.
